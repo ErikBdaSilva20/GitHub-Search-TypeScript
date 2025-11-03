@@ -13,5 +13,32 @@
   padding: 5px 10px;
   border-radius: 6px;
   font-weight: bold;
-  cursor: text; /* indica que pode copiar */
+  cursor: text;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .userList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .userItem {
+    border: 2px solid #fafafa;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #003cff28;
+    transition: all 0.2s;
+}
+
+.userItem:hover {
+  background-color: #000426;
+  color: rgb(0, 128, 255);
+  border-color: #00e1ff;
 }

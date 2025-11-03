@@ -1,18 +1,28 @@
+import { toast } from "react-toastify";
 import classes from "./SuggestedUsers.module.css";
 
-type Props = {
-  users: string[]; // array de logins
+type SuggestedUsersProps = {
+  users: string[];
 };
 
-const SuggestedUsers = ({ users }: Props) => {
+const SuggestedUsers = ({ users }: SuggestedUsersProps) => {
+  const handleCopy = (username: string) => {
+    navigator.clipboard.writeText(username);
+    toast.success(`${username} copiado!`);
+  };
+
   return (
     <div className={classes.container}>
-      <h3>Usuários sugeridos:</h3>
-      <div className={classes.list}>
+      <h3 className={classes.title}>Usuários sugeridos</h3>
+      <div className={classes.userList}>
         {users.map((username) => (
-          <span key={username} className={classes.userName}>
+          <div
+            key={username}
+            className={classes.userItem}
+            onClick={() => handleCopy(username)}
+          >
             {username}
-          </span>
+          </div>
         ))}
       </div>
     </div>
