@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { RepoProps } from "../types/repo";
-import Repo from "../components/repos";
+import Repo from "../components/Repos";
 
 import classes from "./Repos.module.css";
 const Repos = () => {

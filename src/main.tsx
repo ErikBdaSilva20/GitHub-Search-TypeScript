@@ -5,9 +5,9 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// Pages
-import { Home } from "./routes/home.tsx";
-import Repos from "./routes/Repos.tsx"; // ✅ Importado
+// Pages 
+import { Home } from "./routes/Home.tsx";
+import Repos from "./routes/Repos.tsx";  
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/repos/:username", // ✅ Nova rota
+        path: "/repos/:username",
         element: <Repos />,
       },
     ],
