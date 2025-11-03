@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+body {
+  background-color: #111011;
+  padding: 2rem;
+  background-image: url('./assets/Github.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+
+
+  &::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.363);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -20;
+min-height: 100vh;
+  }
+
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}

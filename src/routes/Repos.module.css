@@ -1,0 +1,10 @@
+.repoContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.username{
+  color: #00ffee;
+  font-weight: 500;
+}
