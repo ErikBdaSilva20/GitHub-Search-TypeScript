@@ -1,5 +1,5 @@
 .search{
-  background-color: #00595c;
+  background-color: #013e5b;
   padding: 2rem;
   border: 1rem;
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 .search p{
-  color: #9da5d1;
+  color: #00f7ff;
   font-size: 1.2rem;
 }
 

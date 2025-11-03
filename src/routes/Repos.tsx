@@ -40,7 +40,9 @@ const Repos = () => {
 
   return (
     <div className={classes.repos}>
-      <button onClick={() => window.history.back()}>Voltar para home</button>
+      <button className={classes.back} onClick={() => window.history.back()}>
+        Voltar para home
+      </button>
       <h2>
         Melhores 5 projetos de{" "}
         <span className={classes.username}>{username}</span>

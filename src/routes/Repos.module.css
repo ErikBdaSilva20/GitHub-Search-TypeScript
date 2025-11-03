@@ -8,3 +8,22 @@
   color: #00ffee;
   font-weight: 500;
 }
+.back {
+  background-color: black;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: 1px solid #00fbff;
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #00fbff;
+    color: #000000;
+  }
+
+}
