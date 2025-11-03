@@ -1,23 +1,24 @@
-import type { UserProps } from "../types/user.ts";
-import type { RandomUserProps } from "../types/randomUser.ts";
-
 import { useEffect, useState } from "react";
+import type { UserProps } from "../types/user";
+import type { RandomUserProps } from "../types/randomUser";
 
 // Componentes
-import { Search } from "../components/Search.tsx";
-import Error from "../components/Error.tsx";
-import SuggestedUsers from "../components/SuggestedUsers.tsx";
-import User from "../components/User.tsx";
+import { Search } from "../components/Search";
+import User from "../components/User";
+import SuggestedUsers from "../components/SuggestedUsers";
+import Error from "../components/Error";
 
-// Supondo que você tenha uma função para buscar usuários aleatórios
-import { fetchRandomUsers } from "../components/gitHubRandomFetch.ts";
+// Função para pegar usuários aleatórios
+import { fetchRandomUsers } from "../components/gitHubRandomFetch";
+
+// CSS do container pai
+import classes from "./HomeContainer.module.css";
 
 export const Home = () => {
   const [user, setUser] = useState<UserProps | null>(null);
   const [error, setError] = useState(false);
   const [suggestedUsers, setSuggestedUsers] = useState<string[]>([]);
 
-  // Busca usuário pelo input
   const loadUser = async (username: string) => {
     setError(false);
     setUser(null);
@@ -31,18 +32,9 @@ export const Home = () => {
 
     const { avatar_url, login, location, followers, following } = data;
 
-    const userData: UserProps = {
-      avatar_url,
-      login,
-      location,
-      followers,
-      following,
-    };
-
-    setUser(userData);
+    setUser({ avatar_url, login, location, followers, following });
   };
 
-  // Busca usuários aleatórios quando o componente monta
   useEffect(() => {
     const loadUsers = async () => {
       try {
@@ -57,16 +49,24 @@ export const Home = () => {
   }, []);
 
   return (
-    <>
-      <div>
+    <div className={classes.homeContainer}>
+      <div className="searchWrapper">
         <Search loadUser={loadUser} />
-        {user && <User {...user} />}
-        {error && <Error />}
       </div>
 
-      <div>
-        <SuggestedUsers users={suggestedUsers} />
-      </div>
-    </>
+      {user && (
+        <div className="userWrapper">
+          <User {...user} />
+        </div>
+      )}
+
+      {error && <Error />}
+
+      {suggestedUsers.length > 0 && (
+        <div className="suggestedWrapper">
+          <SuggestedUsers users={suggestedUsers} />
+        </div>
+      )}
+    </div>
   );
 };

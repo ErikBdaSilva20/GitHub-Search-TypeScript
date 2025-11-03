@@ -1,0 +1,58 @@
+/* Container pai da página Home */
+.homeContainer {
+  width: 100%;
+  max-width: 1200px; /* largura máxima para desktop */
+  margin: 0 auto; /* centraliza horizontalmente */
+  padding: 1rem; /* espaço interno */
+  display: flex;
+  flex-direction: column; /* mobile-first: itens empilhados */
+  gap: 2rem; /* espaçamento entre componentes */
+}
+
+/* Busca (Search) já vai respeitar largura total do container */
+.homeContainer > .searchWrapper {
+  width: 100%;
+}
+
+/* Usuário carregado */
+.homeContainer > .userWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centraliza o card do usuário */
+}
+
+/* Usuários sugeridos */
+.homeContainer > .suggestedWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* se houver muitos usuários, quebra a linha */
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Repositórios */
+.homeContainer > .reposWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Desktop: layout de grid para sugeridos e repos */
+@media (min-width: 768px) {
+  .homeContainer > .suggestedWrapper {
+    justify-content: flex-start;
+  }
+
+  .homeContainer > .reposWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablet */
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homeContainer > .reposWrapper {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em desktop */
+  }
+}

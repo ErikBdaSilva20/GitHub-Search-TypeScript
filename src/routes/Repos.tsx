@@ -44,7 +44,7 @@ const Repos = () => {
         Voltar para home
       </button>
       <h2>
-        Melhores 5 projetos de{" "}
+        Melhoresprojetos de
         <span className={classes.username}>{username}</span>
       </h2>
       {repos.map((repo) => (

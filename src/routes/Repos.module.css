@@ -1,13 +1,20 @@
-.repoContainer{
+.repoContainer {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  width: 100%;
+    /* mobile: ocupa toda a largura */
+    max-width: 1200px;
+    /* limite em telas grandes */
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1rem;
 }
 
-.username{
+.username {
   color: #00ffee;
   font-weight: 500;
 }
+
 .back {
   background-color: black;
   color: #ffffff;
@@ -16,14 +23,37 @@
   margin: 10px 0;
   border: 1px solid #00fbff;
   cursor: pointer;
-
   font-weight: 700;
-
   transition: all 0.2s ease-in-out;
+}
 
-  &:hover {
-    background-color: #00fbff;
-    color: #000000;
+.back:hover {
+  background-color: #00fbff;
+  color: #000000;
+}
+
+/* Container de repositórios internos */
+.repos {
+  display: flex;
+  flex-direction: column;
+  /* mobile: coluna */
+  gap: 1rem;
+  width: 100%;
+}
+/* Tablets e desktops */
+@media (min-width: 600px) {
+  .repos {
+    flex-direction: row;
+    /* organiza em linha */
+    flex-wrap: wrap;
+    /* permite múltiplas linhas */
+    justify-content: center;
+    gap: 1rem;
   }
+}
 
+@media (min-width: 1024px) {
+  .repos {
+    gap: 1.5rem;
+  }
 }

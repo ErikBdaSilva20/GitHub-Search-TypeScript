@@ -44,3 +44,74 @@
   color: #ffffff;
   font-style: italic;
 }
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .repo {
+    padding: 12px;
+    gap: 15px;
+  }
+
+  .repo-header a {
+    font-size: 1rem;
+  }
+
+  .repo-stats {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+
+  .repo-language {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .repo {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .repo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .repo-header a {
+    font-size: 0.95rem;
+  }
+
+  .repo-stats {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8rem;
+  }
+
+  .repo-language {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .repo-header a {
+    font-size: 0.9rem;
+  }
+
+  .repo-stats {
+    gap: 4px;
+    font-size: 0.75rem;
+  }
+
+  .repo-language {
+    font-size: 0.75rem;
+  }
+}

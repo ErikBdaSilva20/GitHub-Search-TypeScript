@@ -3,31 +3,21 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
-// Pages 
+// Pages
 import { Home } from "./routes/Home.tsx";
-import Repos from "./routes/Repos.tsx";  
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/repos/:username",
-        element: <Repos />,
-      },
-    ],
-  },
-]);
+import Repos from "./routes/Repos.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="repos/:username" element={<Repos />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   </StrictMode>
 );
