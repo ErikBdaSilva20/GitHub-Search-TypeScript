@@ -57,9 +57,6 @@ Esse projeto foi um passo importante pra consolidar minha confiança em React e 
 # Clone o repositório
 git clone https://github.com/ErikBdaSilva20/GitHub-Search-TypeScript
 
-# Acesse a pasta
-cd NOME-DO-REPO
-
 # Instale as dependências
 npm install
 
