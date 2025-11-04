@@ -1,10 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
 .repoContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
-    /* mobile: ocupa toda a largura */
     max-width: 1200px;
-    /* limite em telas grandes */
     margin: 0 auto;
     padding: 1rem;
     gap: 1rem;
@@ -35,18 +40,14 @@
 /* Container de repositórios internos */
 .repos {
   display: flex;
-  flex-direction: column;
-  /* mobile: coluna */
   gap: 1rem;
-  width: 100%;
+  width: 80%;
 }
 /* Tablets e desktops */
 @media (min-width: 600px) {
   .repos {
     flex-direction: row;
-    /* organiza em linha */
     flex-wrap: wrap;
-    /* permite múltiplas linhas */
     justify-content: center;
     gap: 1rem;
   }

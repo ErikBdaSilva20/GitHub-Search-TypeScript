@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { RepoProps } from "../types/repo";
-import Repo from "../components/Repos";
+import Repo from "../components/Repo";
 
 import classes from "./Repos.module.css";
 const Repos = () => {
@@ -39,14 +39,16 @@ const Repos = () => {
   if (error) return <p>Erro ao carregar repositórios</p>;
 
   return (
-    <div className={classes.repos}>
-      <button className={classes.back} onClick={() => window.history.back()}>
-        Voltar para home
-      </button>
-      <h2>
-        Melhoresprojetos de
-        <span className={classes.username}>{username}</span>
-      </h2>
+    <div className={classes.container}>
+      <div className={classes.repos}>
+        <button className={classes.back} onClick={() => window.history.back()}>
+          Voltar para home
+        </button>
+        <h2>
+          Melhoresprojetos de
+          <span className={classes.username}>{username}</span>
+        </h2>
+      </div>
       {repos.map((repo) => (
         <Repo key={repo.id} repo={repo} />
       ))}
